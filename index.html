@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>単回帰分析</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/main.js" defer></script>
+  <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css" />
+  <script defer src="https://pyscript.net/latest/pyscript.js"></script>
+</head>
+<body>
+  <header class="header">
+    単回帰分析
+  </header>
+  <main class="main">
+    <div class="title">
+      データを入力してください。
+    </div>
+    <div class="text">
+      x, yのいずれかしか入力されていないデータ、x, yのいずれも入力されていないデータは無視します。
+    </div>
+    <div class="data" id="data">
+      <div class="data_child">
+        <div class="data_x">
+          <label>x</label>
+          <input type="number">
+        </div>
+        <div class="comma">, </div>
+        <div class="data_y">
+          <label>y</label>
+          <input type="number">
+        </div>
+        <button class="delete">消去する</button>
+      </div>
+      <div class="data_child">
+        <div class="data_x">
+          <label>x</label>
+          <input type="number">
+        </div>
+        <div class="comma">, </div>
+        <div class="data_y">
+          <label>y</label>
+          <input type="number">
+        </div>
+        <button class="delete">消去する</button>
+      </div>
+      <div class="data_child">
+        <div class="data_x">
+          <label>x</label>
+          <input type="number">
+        </div>
+        <div class="comma">, </div>
+        <div class="data_y">
+          <label>y</label>
+          <input type="number">
+        </div>
+        <button class="delete">消去する</button>
+      </div>
+    </div>
+    <button id="delete_all">
+      全て消去する
+    </button>
+    <button id="add">
+      データ数を追加する
+    </button>
+    <button id="calculate" py-click="calculate()">
+      単回帰分析を実行する
+    </button>
+    <div id="display">
+      <div id="display_a"></div>
+      <div id="display_plt"></div>
+    </div>
+  </main>
+  <py-config>
+    packages = ["numpy", "matplotlib", "pandas"]
+    plugins = [
+      "https://pyscript.net/latest/plugins/python/py_tutor.py"
+    ]
+    [[fetch]]
+    files = ["py/main.py"]
+  </py-config>
+  <py-script src="py/main.py"></py-script>
+</body>
+</html>
